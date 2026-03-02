@@ -4,133 +4,342 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Луксозен апартамент в Неа Перамос</title>
+<title>Aqua Marine KA 5</title>
 
-<!-- Premium handwritten font -->
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Allura&display=swap" rel="stylesheet">
+<!-- Луксозни шрифтове -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<script src="https://js.stripe.com/v3/"></script>
 
 <style>
 body{
     margin:0;
-    font-family:'Marcellus', serif;
-    background:#EDEDEB; /* RAL 9002 */
-    color:#2b2b2b;
+    background:#F5F5F2; /* RAL 9002 */
+    font-family:'Cormorant Garamond', serif;
+    color:#222;
     line-height:1.6;
+    font-size:18px;
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:20px;
+/* ===== HEADER ===== */
+header{
+    text-align:center;
+    padding:40px 20px 20px;
 }
 
 h1{
+    font-family:'Great Vibes', cursive;
+    font-size:56px;
+    margin:0;
+}
+
+/* ===== NAV ===== */
+nav{
     text-align:center;
-    font-size:34px;
-    margin-bottom:10px;
-    letter-spacing:1px;
+    margin-bottom:30px;
 }
 
-.section-title{
-    font-family:'Allura', cursive;
-    font-size:30px;
-    margin-top:50px;
-    margin-bottom:15px;
-    color:#0f6a6a;
+nav button{
+    padding:10px 18px;
+    margin:5px;
+    border:none;
+    background:#c6a769;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    border-radius:6px;
 }
 
-.description{
-    font-size:17px;
+/* ===== SECTIONS ===== */
+.section{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
 }
 
-.highlight{
-    color:#0f6a6a;
-    font-weight:bold;
+.section h2{
+    text-align:center;
+    letter-spacing:2px;
+    color:#000;
+    font-weight:700;
+    margin-bottom:25px;
 }
 
+/* ===== DESCRIPTION ===== */
+.hero-text{
+    font-size:19px;
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 30px;
+}
+
+/* ===== GALLERY ===== */
 .gallery{
-    position:relative;
-    max-width:100%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
 }
 
 .gallery img{
     width:100%;
-    border-radius:12px;
+    height:170px;
+    object-fit:cover;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+/* ===== LIGHTBOX ===== */
+#lightbox{
+    display:none;
+    position:fixed;
+    z-index:999;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    align-items:center;
+    justify-content:center;
+}
+
+#lightbox img{
+    max-width:90%;
+    max-height:85%;
 }
 
 .arrow{
     position:absolute;
     top:50%;
-    transform:translateY(-50%);
-    background:rgba(0,0,0,0.4);
+    font-size:48px;
+    color:white;
+    cursor:pointer;
+    user-select:none;
+    padding:20px;
+}
+
+.left{ left:20px; }
+.right{ right:20px; }
+
+/* ===== BOOKING ===== */
+.booking{
+    text-align:center;
+}
+
+.booking input,
+.booking select{
+    padding:10px;
+    margin:6px;
+    font-size:16px;
+}
+
+/* ===== PRICE BOX ===== */
+.price-box{
+    text-align:center;
+    font-size:20px;
+    margin-top:15px;
+}
+
+/* ===== CONTACTS ===== */
+.contacts{
+    text-align:center;
+    font-size:18px;
+}
+
+/* ===== BUTTON ===== */
+.pay-btn{
+    background:#c6a769;
     color:white;
     border:none;
-    font-size:24px;
-    padding:10px 14px;
+    padding:14px 28px;
+    font-size:18px;
     cursor:pointer;
-    border-radius:50%;
-}
-
-.prev{ left:10px; }
-.next{ right:10px; }
-
-.price-box{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    margin-top:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.pay-btn{
-    display:inline-block;
-    background:#0f6a6a;
-    color:white;
-    padding:14px 26px;
     border-radius:8px;
-    text-decoration:none;
-    font-size:16px;
     margin-top:15px;
-    transition:.25s;
-}
-
-.pay-btn:hover{
-    background:#0c5555;
-}
-
-.lang-switch{
-    text-align:right;
-    margin-bottom:10px;
-}
-
-.contact-box{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    margin-top:30px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+<h1>Aqua Marine KA 5</h1>
+</header>
 
-<div class="lang-switch">
-<button onclick="setLang('bg')">BG</button>
-<button onclick="setLang('en')">EN</button>
+<nav>
+<button onclick="setLang('bg')">Български</button>
+<button onclick="setLang('en')">English</button>
+</nav>
+
+<!-- ===== ЗА АПАРТАМЕНТА ===== -->
+<div class="section">
+<h2 id="t_about">ЗА АПАРТАМЕНТА</h2>
+
+<div class="hero-text" id="about_text">
+Потопете се в елегантността на Aqua Marine KA 5 — изискан апартамент,
+създаден за ценители на спокойствието, морския въздух и безкомпромисния комфорт.
+Самостоятелното паркомясто, модерният интериор и прецизно подбраните детайли
+създават усещане за бутиков хотел, но с уюта на истински дом.
+Тук всяка сутрин започва с лекота, а всяка вечер завършва с усещане за пълноценна почивка.
+</div>
 </div>
 
-<h1 id="title">
-Луксозен апартамент в Неа Перамос
-</h1>
+<!-- ===== ЦЕНИ ===== -->
+<div class="section">
+<h2 id="t_prices">ЦЕНИ</h2>
+<div class="hero-text" id="prices_text">
+• Под 5 нощувки: 160€ на вечер<br>
+• 5 и повече нощувки: 150€ на вечер<br>
+• Депозит: 20% при резервация
+</div>
+</div>
 
-<!-- DESCRIPTION -->
-<div class="description" id="desc">
+<!-- ===== ГАЛЕРИЯ ===== -->
+<div class="section">
+<h2 id="t_gallery">ГАЛЕРИЯ</h2>
 
-Подарете си незабравима почивка в този изискан апартамент, създаден за хора, които ценят комфорта, тишината и премиум усещането.
+<div class="gallery">
+<img src="1.jpg" onclick="openLightbox(0)">
+<img src="2.jpg" onclick="openLightbox(1)">
+<img src="3.jpg" onclick="openLightbox(2)">
+<img src="4.jpg" onclick="openLightbox(3)">
+<img src="5.jpg" onclick="openLightbox(4)">
+<img src="6.jpg" onclick="openLightbox(5)">
+<img src="7.jpg" onclick="openLightbox(6)">
+<img src="8.jpg" onclick="openLightbox(7)">
+<img src="9.jpg" onclick="openLightbox(8)">
+<img src="10.jpg" onclick="openLightbox(9)">
+<img src="11.jpg" onclick="openLightbox(10)">
+<img src="12.jpg" onclick="openLightbox(11)">
+<img src="13.jpg" onclick="openLightbox(12)">
+<img src="14.jpg" onclick="openLightbox(13)">
+<img src="15.jpg" onclick="openLightbox(14)">
+<img src="16.jpg" onclick="openLightbox(15)">
+<img src="17.jpg" onclick="openLightbox(16)">
+<img src="18.jpg" onclick="openLightbox(17)">
+<img src="19.jpg" onclick="openLightbox(18)">
+</div>
+</div>
 
-Само на <span class="highlight">80 метра от плажа</span>, ще се наслаждавате на морето по всяко време на деня, без нужда от дълги разходки или автомобил.
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+<div class="arrow left" onclick="event.stopPropagation();prevImg()">❮</div>
+<img id="lightbox-img">
+<div class="arrow right" onclick="event.stopPropagation();nextImg()">❯</div>
+</div>
 
-Имотът разполага със <span class="highlight
+<!-- ===== РЕЗЕРВАЦИЯ ===== -->
+<div class="section booking">
+<h2 id="t_booking">РЕЗЕРВАЦИЯ</h2>
+
+<input type="date" id="checkin">
+<select id="nights"></select>
+
+<div class="price-box" id="total_price"></div>
+
+<button class="pay-btn" onclick="payDeposit()" id="pay_btn">
+ПЛАТИ ДЕПОЗИТ
+</button>
+</div>
+
+<!-- ===== КАРТА ===== -->
+<div class="section">
+<h2 id="t_location">ЛОКАЦИЯ</h2>
+
+<iframe
+width="100%"
+height="350"
+style="border:0"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+src="https://maps.google.com/maps?q=40.8517289,24.3140363&z=15&output=embed">
+</iframe>
+</div>
+
+<!-- ===== КОНТАКТИ ===== -->
+<div class="section contacts">
+<h2 id="t_contacts">КОНТАКТИ</h2>
+
+<div>Email: antoaneta_n_k@yahoo.dk</div>
+<div>Телефон: 00359876644933</div>
+<div>
+<a href="#" target="_blank">Facebook</a>
+</div>
+</div>
+
+<script>
+/* ===== НОЩУВКИ ===== */
+const nightsSelect=document.getElementById("nights");
+for(let i=1;i<=30;i++){
+    let opt=document.createElement("option");
+    opt.value=i;
+    opt.text=i+" нощувки";
+    nightsSelect.appendChild(opt);
+}
+
+/* ===== ЦЕНИ ===== */
+function calc(){
+    const nights=+nightsSelect.value;
+    if(!nights) return;
+    const price=nights<5?160:150;
+    const total=price*nights;
+    const deposit=(total*0.2).toFixed(2);
+    document.getElementById("total_price").innerHTML=
+        "Общо: "+total+"€ | Депозит: "+deposit+"€";
+}
+nightsSelect.onchange=calc;
+
+/* ===== STRIPE TEST ===== */
+function payDeposit(){
+    alert("Тестов бутон — Stripe ще се свърже на следващ етап.");
+}
+
+/* ===== GALLERY ===== */
+const images=[
+"1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg",
+"10.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg"
+];
+
+let current=0;
+
+function openLightbox(i){
+    current=i;
+    document.getElementById("lightbox-img").src=images[current];
+    document.getElementById("lightbox").style.display="flex";
+}
+
+function closeLightbox(){
+    document.getElementById("lightbox").style.display="none";
+}
+
+function prevImg(){
+    current=(current-1+images.length)%images.length;
+    document.getElementById("lightbox-img").src=images[current];
+}
+
+function nextImg(){
+    current=(current+1)%images.length;
+    document.getElementById("lightbox-img").src=images[current];
+}
+
+/* ===== TRANSLATE ===== */
+function setLang(lang){
+if(lang==="en"){
+document.getElementById("t_about").innerText="ABOUT THE APARTMENT";
+document.getElementById("t_prices").innerText="PRICES";
+document.getElementById("t_gallery").innerText="GALLERY";
+document.getElementById("t_booking").innerText="BOOKING";
+document.getElementById("t_location").innerText="LOCATION";
+document.getElementById("t_contacts").innerText="CONTACTS";
+document.getElementById("pay_btn").innerText="PAY DEPOSIT";
+
+document.getElementById("about_text").innerText=
+"Immerse yourself in the elegance of Aqua Marine KA 5 — a refined apartment created for guests who appreciate tranquility, sea air and uncompromising comfort. The private parking space, modern interior and carefully selected details create the feeling of a boutique hotel with the warmth of a true home.";
+
+document.getElementById("prices_text").innerHTML=
+"• Under 5 nights: 160€ per night<br>• 5+ nights: 150€ per night<br>• Deposit: 20% upon booking";
+
+}else{
+location.reload();
+}
+}
+</script>
+
+</body>
+</html>
