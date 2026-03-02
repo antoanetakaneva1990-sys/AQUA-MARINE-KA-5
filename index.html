@@ -119,19 +119,38 @@ button:hover{ transform:scale(1.05); }
 #lightbox{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.9);
+  background:rgba(0,0,0,0.95);
   display:none;
   justify-content:center;
   align-items:center;
   flex-direction:column;
-  z-index:999;
+  z-index:9999;
 }
 
 #lightbox img{
-  max-width:85%;
-  max-height:85%;
+  max-width:90%;
+  max-height:80%;
   border-radius:12px;
+  margin-bottom:15px;
 }
+
+#lightbox-controls{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+
+#lightbox-controls button{
+  background:#0f6a6a;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  font-size:18px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+#lightbox-controls button:hover{ transform:scale(1.05); }
 
 .map-container{
   width:100%;
@@ -142,7 +161,6 @@ button:hover{ transform:scale(1.05); }
 
 @keyframes fadeIn{ to{opacity:1;} }
 
-/* Responsive */
 @media (max-width:768px){
   header h1{ font-size:2.5rem; }
   header p{ font-size:1rem; }
@@ -179,13 +197,11 @@ button:hover{ transform:scale(1.05); }
 <p id="aboutText"></p>
 </div>
 
-<!-- ЦЕНИ -->
 <div class="card">
 <h2 id="pricesTitle"></h2>
 <p id="pricesText"></p>
 </div>
 
-<!-- ГАЛЕРИЯ -->
 <div class="card">
 <h2 id="galleryTitle"></h2>
 <div class="gallery" id="gallery"></div>
@@ -193,17 +209,15 @@ button:hover{ transform:scale(1.05); }
 
 <div id="lightbox">
 <img id="lightbox-img">
-<div style="margin-top:15px;">
-<button onclick="prevImage()">←</button>
-<button onclick="nextImage()">→</button>
-<button onclick="closeLightbox()">✕</button>
+<div id="lightbox-controls">
+<button onclick="prevImage()">← Предишна</button>
+<button onclick="nextImage()">Следваща →</button>
+<button onclick="closeLightbox()">✕ Затвори</button>
 </div>
 </div>
 
-<!-- РЕЗЕРВАЦИЯ -->
 <div class="card">
 <h2 id="bookingTitle"></h2>
-
 <label id="checkinLabel"></label>
 <input type="date" id="checkin" class="input-field">
 
@@ -216,14 +230,12 @@ button:hover{ transform:scale(1.05); }
 <button id="payBtn"></button>
 </div>
 
-<!-- КОНТАКТИ -->
 <div class="card">
 <h2 id="contactTitle"></h2>
 <p id="contactText"></p>
 <p>🌐 <a href="https://www.facebook.com/share/17wdG6LS9p/?mibextid=wwXIfr" target="_blank">Фейсбук страница</a></p>
 </div>
 
-<!-- ЛОКАЦИЯ -->
 <div class="card">
 <h2 id="mapTitle"></h2>
 <div class="map-container">
