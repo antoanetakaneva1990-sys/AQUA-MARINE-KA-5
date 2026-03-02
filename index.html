@@ -35,8 +35,8 @@ h2 {margin-top:0;color:#0077b6;}
   display:none;justify-content:center;align-items:center;z-index:1000;flex-direction:column;
 }
 #lightbox img {max-width:80%;max-height:80%;border-radius:12px;margin-bottom:10px;}
-#lightbox .nav {display:flex;justify-content:space-between;width:80%;max-width:600px;}
-#lightbox .nav button {background:#0077b6;color:white;font-size:18px;padding:10px 20px;border-radius:8px;}
+#lightbox .nav {display:flex;justify-content:space-between;width:80%;max-width:600px;margin-bottom:10px;}
+#lightbox .nav button {background:#0077b6;color:white;font-size:18px;padding:10px 20px;border-radius:8px;cursor:pointer;}
 footer {text-align:center;padding:40px;color:#555;background:#eee;}
 input, select {padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;width:100%;box-sizing:border-box;}
 label {display:block;margin-top:10px;font-weight:bold;}
@@ -60,11 +60,11 @@ label {display:block;margin-top:10px;font-weight:bold;}
 
 <div class="container">
 
-<!-- Художествено описание -->
+<!-- Описание -->
 <div class="card">
 <h2 id="aboutTitle">За апартамента</h2>
 <p id="aboutText">
-Потопете се в атмосферата на уют и стил. Апартаментът разполага с две просторни спални, светла тераса с барбекю и собствен двор. Насладете се на уединение и комфорт, като сте само на стъпки от морския бряг. Идеален избор за незабравими летни вечери под гръцкото слънце.
+Потопете се в атмосферата на уют и стил. Апартаментът разполага с две просторни спални, светла тераса с барбекю и собствен двор. Насладете се на уединение и комфорт, като сте само на стъпки от морския бряг.
 </p>
 </div>
 
@@ -72,25 +72,26 @@ label {display:block;margin-top:10px;font-weight:bold;}
 <div class="card">
 <h2 id="galleryTitle">Галерия</h2>
 <div class="gallery" id="gallery">
-<img src="img1.jpg" onclick="openLightbox(0)">
-<img src="img2.jpg" onclick="openLightbox(1)">
-<img src="img3.jpg" onclick="openLightbox(2)">
-<img src="img4.jpg" onclick="openLightbox(3)">
-<img src="img5.jpg" onclick="openLightbox(4)">
-<img src="img6.jpg" onclick="openLightbox(5)">
-<img src="img7.jpg" onclick="openLightbox(6)">
-<img src="img8.jpg" onclick="openLightbox(7)">
-<img src="img9.jpg" onclick="openLightbox(8)">
-<img src="img10.jpg" onclick="openLightbox(9)">
-<img src="img11.jpg" onclick="openLightbox(10)">
-<img src="img12.jpg" onclick="openLightbox(11)">
-<img src="img13.jpg" onclick="openLightbox(12)">
-<img src="img14.jpg" onclick="openLightbox(13)">
-<img src="img15.jpg" onclick="openLightbox(14)">
-<img src="img16.jpg" onclick="openLightbox(15)">
-<img src="img17.jpg" onclick="openLightbox(16)">
-<img src="img18.jpg" onclick="openLightbox(17)">
-<img src="img19.jpg" onclick="openLightbox(18)">
+<!-- 19 снимки -->
+<img src="img1.jpg" data-index="0">
+<img src="img2.jpg" data-index="1">
+<img src="img3.jpg" data-index="2">
+<img src="img4.jpg" data-index="3">
+<img src="img5.jpg" data-index="4">
+<img src="img6.jpg" data-index="5">
+<img src="img7.jpg" data-index="6">
+<img src="img8.jpg" data-index="7">
+<img src="img9.jpg" data-index="8">
+<img src="img10.jpg" data-index="9">
+<img src="img11.jpg" data-index="10">
+<img src="img12.jpg" data-index="11">
+<img src="img13.jpg" data-index="12">
+<img src="img14.jpg" data-index="13">
+<img src="img15.jpg" data-index="14">
+<img src="img16.jpg" data-index="15">
+<img src="img17.jpg" data-index="16">
+<img src="img18.jpg" data-index="17">
+<img src="img19.jpg" data-index="18">
 </div>
 </div>
 
@@ -125,16 +126,12 @@ label {display:block;margin-top:10px;font-weight:bold;}
 <button class="primary" onclick="calculateDeposit()">Плати депозит</button>
 </div>
 
-<!-- Google Maps -->
+<!-- Карта -->
 <div class="card">
 <h2>Локация</h2>
 <div class="map-container">
-<iframe 
-src="https://www.google.com/maps?q=40.8517289,24.3140363&hl=bg&z=16&output=embed" 
-width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<iframe src="https://www.google.com/maps?q=40.8517289,24.3140363&hl=bg&z=16&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
-</div>
-
 </div>
 
 <footer>
@@ -142,43 +139,40 @@ width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"><
 </footer>
 
 <script>
-const images = [
-"img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg","img6.jpg","img7.jpg","img8.jpg","img9.jpg",
-"img10.jpg","img11.jpg","img12.jpg","img13.jpg","img14.jpg","img15.jpg","img16.jpg","img17.jpg","img18.jpg","img19.jpg"
-];
+// Галерия с стрелки
+const galleryImages = document.querySelectorAll('#gallery img');
 let currentIndex = 0;
 
-function openLightbox(index){
-  currentIndex=index;
-  document.getElementById("lightbox").style.display="flex";
-  document.getElementById("lightbox-img").src=images[currentIndex];
+galleryImages.forEach(img=>{
+  img.addEventListener('click',()=>{
+    currentIndex = parseInt(img.getAttribute('data-index'));
+    openLightbox();
+  });
+});
+
+function openLightbox(){
+  document.getElementById('lightbox').style.display='flex';
+  document.getElementById('lightbox-img').src=galleryImages[currentIndex].src;
 }
 function closeLightbox(){
-  document.getElementById("lightbox").style.display="none";
+  document.getElementById('lightbox').style.display='none';
 }
 function prevImage(){
-  currentIndex = (currentIndex-1+images.length)%images.length;
-  document.getElementById("lightbox-img").src=images[currentIndex];
+  currentIndex=(currentIndex-1+galleryImages.length)%galleryImages.length;
+  document.getElementById('lightbox-img').src=galleryImages[currentIndex].src;
 }
 function nextImage(){
-  currentIndex = (currentIndex+1)%images.length;
-  document.getElementById("lightbox-img").src=images[currentIndex];
+  currentIndex=(currentIndex+1)%galleryImages.length;
+  document.getElementById('lightbox-img').src=galleryImages[currentIndex].src;
 }
 
-function calculateDeposit(){
-  let nights=parseInt(document.getElementById("nights").value);
-  let pricePerNight=nights>=5?150:160;
-  let total=nights*pricePerNight;
-  let deposit=total*0.2;
-  alert(`Обща сума: ${total}€\nДепозит (20%): ${deposit}€`);
-}
-
+// Превод BG/EN
 function setLang(lang){
 if(lang==='en'){
 title.innerText="Aqua Marine KA5";
 subtitle.innerText="Luxury apartment in Nea Peramos • Only 80 m from the sea";
 aboutTitle.innerText="About the apartment";
-aboutText.innerHTML="Immerse yourself in comfort and style. The apartment offers two spacious bedrooms, sunny terrace with BBQ and private yard. Perfect for unforgettable summer evenings by the Greek sea.";
+aboutText.innerHTML="Immerse yourself in comfort and style. The apartment offers two spacious bedrooms, sunny terrace with BBQ and private yard.";
 galleryTitle.innerText="Gallery";
 bookTitle.innerText="Booking";
 depositInfo.innerText="Deposit: 20% of total amount";
@@ -186,4 +180,22 @@ depositInfo.innerText="Deposit: 20% of total amount";
 title.innerText="Aqua Marine KA5";
 subtitle.innerText="Луксозен апартамент в Неа Перамос • Само на 80 метра от морето";
 aboutTitle.innerText="За апартамента";
-aboutText.innerHTML="Потопете се в атмосферата на уют
+aboutText.innerHTML="Потопете се в атмосферата на уют и стил. Апартаментът разполага с две просторни спални, светла тераса с барбекю и собствен двор.";
+galleryTitle.innerText="Галерия";
+bookTitle.innerText="Резервация";
+depositInfo.innerText="Депозит: 20% от общата сума";
+}
+}
+
+// Изчисляване депозит
+function calculateDeposit(){
+  let nights=parseInt(document.getElementById("nights").value);
+  let pricePerNight=nights>=5?150:160;
+  let total=nights*pricePerNight;
+  let deposit=total*0.2;
+  alert(`Обща сума: ${total}€\nДепозит (20%): ${deposit}€`);
+}
+</script>
+
+</body>
+</html>
