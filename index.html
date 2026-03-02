@@ -128,21 +128,21 @@ function nextImage(){currentIndex=(currentIndex+1)%galleryImages.length;document
 // Превод BG/EN
 function setLang(lang){
 if(lang==='en'){
-title.innerText="Aqua Marine KA5";
-subtitle.innerText="Luxury apartment in Nea Peramos • Only 80 m from the sea";
-aboutTitle.innerText="About the apartment";
-aboutText.innerHTML="Immerse yourself in the comfort and style. The apartment offers two spacious bedrooms, sunny terrace with BBQ and private yard. Perfect for unforgettable summer evenings by the Greek sea.";
-galleryTitle.innerText="Gallery";
-bookTitle.innerText="Booking";
-depositInfo.innerText="Deposit: 20% of total amount";
+document.getElementById("title").innerText="Aqua Marine KA5";
+document.getElementById("subtitle").innerText="Luxury apartment in Nea Peramos • Only 80 m from the sea";
+document.getElementById("aboutTitle").innerText="About the apartment";
+document.getElementById("aboutText").innerHTML="Immerse yourself in the comfort and style. The apartment offers two spacious bedrooms, sunny terrace with BBQ and private yard. Perfect for unforgettable summer evenings by the Greek sea.";
+document.getElementById("galleryTitle").innerText="Gallery";
+document.getElementById("bookTitle").innerText="Booking";
+document.getElementById("depositInfo").innerText="Deposit: 20% of total amount";
 }else{
-title.innerText="Aqua Marine KA5";
-subtitle.innerText="Луксозен апартамент в Неа Перамос • Само на 80 метра от морето";
-aboutTitle.innerText="За апартамента";
-aboutText.innerHTML="Потопете се в атмосферата на уют и стил. Апартаментът разполага с две просторни спални, светла тераса с барбекю и собствен двор. Идеален за незабравими летни вечери под гръцкото слънце.";
-galleryTitle.innerText="Галерия";
-bookTitle.innerText="Резервация";
-depositInfo.innerText="Депозит: 20% от общата сума";
+document.getElementById("title").innerText="Aqua Marine KA5";
+document.getElementById("subtitle").innerText="Луксозен апартамент в Неа Перамос • Само на 80 метра от морето";
+document.getElementById("aboutTitle").innerText="За апартамента";
+document.getElementById("aboutText").innerHTML="Потопете се в атмосферата на уют и стил. Апартаментът разполага с две просторни спални, светла тераса с барбекю и собствен двор. Насладете се на уединение и комфорт, като сте само на стъпки от морския бряг. Идеален за незабравими летни вечери под гръцкото слънце.";
+document.getElementById("galleryTitle").innerText="Галерия";
+document.getElementById("bookTitle").innerText="Резервация";
+document.getElementById("depositInfo").innerText="Депозит: 20% от общата сума";
 }
 }
 
