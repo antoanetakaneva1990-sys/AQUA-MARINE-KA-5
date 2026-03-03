@@ -6,7 +6,6 @@
 <title>Aqua Marine KA5</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<script src="https://js.stripe.com/v3/"></script>
 
 <style>
 body{
@@ -15,7 +14,7 @@ body{
   font-family:'Roboto', sans-serif;
   font-size:17px;
   color:#2b2b2b;
-  line-height:1.95;
+  line-height:1.9;
 }
 
 header{
@@ -23,13 +22,11 @@ header{
   color:white;
   text-align:center;
   padding:60px 20px;
-  opacity:0;
-  animation: fadeIn 1.2s forwards;
 }
 
 header h1{
   font-weight:700;
-  font-size:3.2rem;
+  font-size:3rem;
   margin:0 0 10px;
 }
 
@@ -59,19 +56,11 @@ header p{
   margin:20px 0;
   border-radius:16px;
   box-shadow:0 12px 30px rgba(0,0,0,0.08);
-  opacity:0;
-  transform:translateY(30px);
-  transition:all 0.8s ease-out;
-}
-
-.card.visible{
-  opacity:1;
-  transform:translateY(0);
 }
 
 h2{
   font-weight:700;
-  font-size:1.9rem;
+  font-size:1.8rem;
   color:#000;
   margin-bottom:15px;
 }
@@ -84,10 +73,7 @@ button{
   border-radius:8px;
   cursor:pointer;
   font-size:15px;
-  transition:transform 0.3s;
 }
-
-button:hover{ transform:scale(1.05); }
 
 .input-field{
   margin-bottom:10px;
@@ -99,59 +85,6 @@ button:hover{ transform:scale(1.05); }
   background:#f7f7f7;
 }
 
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
-}
-
-.gallery img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  border-radius:12px;
-  cursor:pointer;
-  transition:transform 0.3s;
-}
-
-.gallery img:hover{ transform:scale(1.05); }
-
-#lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.95);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  z-index:9999;
-}
-
-#lightbox img{
-  max-width:90%;
-  max-height:80%;
-  border-radius:12px;
-  margin-bottom:15px;
-}
-
-#lightbox-controls{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-}
-
-#lightbox-controls button{
-  background:#0f6a6a;
-  color:white;
-  border:none;
-  padding:12px 20px;
-  font-size:18px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-#lightbox-controls button:hover{ transform:scale(1.05); }
-
 .map-container{
   width:100%;
   height:400px;
@@ -159,21 +92,9 @@ button:hover{ transform:scale(1.05); }
   overflow:hidden;
 }
 
-@keyframes fadeIn{ to{opacity:1;} }
-
 @media (max-width:768px){
-  header h1{ font-size:2.5rem; }
-  header p{ font-size:1rem; }
-  .gallery img{ height:140px; }
+  header h1{ font-size:2.3rem; }
   .card{ padding:20px; }
-  h2{ font-size:1.7rem; }
-}
-
-@media (max-width:480px){
-  header h1{ font-size:2rem; }
-  header p{ font-size:0.95rem; }
-  .gallery img{ height:120px; }
-  h2{ font-size:1.5rem; }
 }
 </style>
 </head>
@@ -198,36 +119,13 @@ button:hover{ transform:scale(1.05); }
 </div>
 
 <div class="card">
+<h2 id="stayTitle"></h2>
+<p id="stayText"></p>
+</div>
+
+<div class="card">
 <h2 id="pricesTitle"></h2>
 <p id="pricesText"></p>
-</div>
-
-<div class="card">
-<h2 id="galleryTitle"></h2>
-<div class="gallery" id="gallery"></div>
-</div>
-
-<div id="lightbox">
-<img id="lightbox-img">
-<div id="lightbox-controls">
-<button onclick="prevImage()">← Предишна</button>
-<button onclick="nextImage()">Следваща →</button>
-<button onclick="closeLightbox()">✕ Затвори</button>
-</div>
-</div>
-
-<div class="card">
-<h2 id="bookingTitle"></h2>
-<label id="checkinLabel"></label>
-<input type="date" id="checkin" class="input-field">
-
-<label id="nightsLabel"></label>
-<input type="number" id="nights" min="1" value="1" class="input-field">
-
-<p id="priceResult" style="font-weight:600;margin-top:10px;"></p>
-<p id="depositResult" style="font-weight:600;"></p>
-
-<button id="payBtn"></button>
 </div>
 
 <div class="card">
@@ -253,18 +151,15 @@ subtitle:"Луксозен апартамент в Неа Перамос • 2 �
 aboutTitle:"ЗА АПАРТАМЕНТА",
 about:`Потопете се в свят на спокойствие и изискан морски комфорт.
 
-Aqua Marine KA5 е идеален за семейство от 4 човека, с двор 20 м² за малки деца. Има собствено парко място.
+Aqua Marine KA5 е идеален за до 4 гости и предлага две отделни спални и уютна дневна с възможност за спане на диван. Във всяка стая има телевизор, а централната климатизация осигурява прохлада през летните дни.
 
-Разположен на около 2 км от яхтеното пристанище на Ираклица и близо до емблематичните плажове Амолофи и Тюркоазените води. Стилен интериор, простор и внимание към всеки детайл. Тераса с барбекю, светлина, стил и усещане за премиум почивка край морето.`,
+Апартаментът разполага с баня с тоалетна и допълнителна самостоятелна тоалетна. Кухнята е напълно оборудвана, включително с пералня и миялна машина. На разположение са двор от 20 м², собствено паркомясто и тераса с барбекю.
+
+Разположен на около 2 км от яхтеното пристанище на Ираклица и в близост до плажовете Амолофи и тюркоазените води на района, Aqua Marine KA5 съчетава удобство, стил и отлична локация за спокойна лятна почивка.`,
+stayTitle:"НАСТАНЯВАНЕ",
+stayText:"Настаняване: след 14:00 ч.<br>Напускане: до 10:00 ч.",
 pricesTitle:"ЦЕНИ",
 prices:`Под 5 нощувки: 160€/вечер<br>5 или повече нощувки: 150€/вечер`,
-bookingTitle:"РЕЗЕРВАЦИЯ",
-checkin:"Дата на настаняване:",
-nights:"Брой нощувки:",
-priceLabel:"Обща цена за престой:",
-depositLabel:"Общ депозит (20%):",
-payBtn:"ПЛАТИ ДЕПОЗИТ",
-galleryTitle:"ГАЛЕРИЯ",
 contactTitle:"КОНТАКТИ",
 contactText:`📧 Имейл: antoaneta_n_k@yahoo.dk<br>📞 Телефон: 00359876644933`,
 mapTitle:"ЛОКАЦИЯ"
@@ -272,97 +167,37 @@ mapTitle:"ЛОКАЦИЯ"
 en:{
 subtitle:"Luxury apartment in Nea Peramos • 2 km from Iraklitsa Marina",
 aboutTitle:"ABOUT THE APARTMENT",
-about:`Step into a world of calm, elegance and seaside comfort.
+about:`Step into a world of calm and refined seaside comfort.
 
-Aqua Marine KA5 is perfect for a family of 4, with a 20 m² yard for small children. Includes private parking space.
+Aqua Marine KA5 is ideal for up to 4 guests and offers two separate bedrooms and a cozy living room with sofa bed. Each room features a TV, and central air conditioning ensures cool comfort during the summer days.
 
-Located about 2 km from Iraklitsa Marina and close to the iconic beaches Amolofi and Turquoise waters. Stylish interior, space and attention to every detail. BBQ terrace, light, style and premium seaside holiday feeling.`,
+The apartment includes a bathroom with toilet and an additional separate toilet. The fully equipped kitchen includes a washing machine and dishwasher. A 20 m² yard, private parking space and BBQ terrace are also available.
+
+Located about 2 km from Iraklitsa Marina and close to the beaches of Amolofi and the turquoise waters of the area, Aqua Marine KA5 combines comfort, style and an excellent location for a relaxing summer holiday.`,
+stayTitle:"CHECK-IN & CHECK-OUT",
+stayText:"Check-in: after 14:00<br>Check-out: until 10:00",
 pricesTitle:"PRICES",
 prices:`Less than 5 nights: 160€/night<br>5+ nights: 150€/night`,
-bookingTitle:"BOOKING",
-checkin:"Check-in date:",
-nights:"Number of nights:",
-priceLabel:"Total stay price:",
-depositLabel:"Total deposit (20%):",
-payBtn:"PAY DEPOSIT",
-galleryTitle:"GALLERY",
 contactTitle:"CONTACTS",
 contactText:`📧 Email: antoaneta_n_k@yahoo.dk<br>📞 Phone: 00359876644933`,
 mapTitle:"LOCATION"
 }
 };
 
-let currentLang='bg';
-
 function setLang(lang){
- currentLang=lang;
  document.getElementById('subtitle').innerHTML=t[lang].subtitle;
  document.getElementById('aboutTitle').innerHTML=t[lang].aboutTitle;
  document.getElementById('aboutText').innerHTML=t[lang].about;
+ document.getElementById('stayTitle').innerHTML=t[lang].stayTitle;
+ document.getElementById('stayText').innerHTML=t[lang].stayText;
  document.getElementById('pricesTitle').innerHTML=t[lang].pricesTitle;
  document.getElementById('pricesText').innerHTML=t[lang].prices;
- document.getElementById('checkinLabel').innerHTML=t[lang].checkin;
- document.getElementById('nightsLabel').innerHTML=t[lang].nights;
- document.getElementById('bookingTitle').innerHTML=t[lang].bookingTitle;
- document.getElementById('payBtn').innerHTML=t[lang].payBtn;
- document.getElementById('galleryTitle').innerHTML=t[lang].galleryTitle;
  document.getElementById('contactTitle').innerHTML=t[lang].contactTitle;
  document.getElementById('contactText').innerHTML=t[lang].contactText;
  document.getElementById('mapTitle').innerHTML=t[lang].mapTitle;
- updatePrice();
 }
 
 setLang('bg');
-
-function updatePrice(){
- const nights=parseInt(document.getElementById('nights').value)||0;
- const pricePerNight=nights>=5?150:160;
- const total=nights*pricePerNight;
- const deposit=total*0.2;
-
- document.getElementById('priceResult').innerHTML=
-   t[currentLang].priceLabel+" "+total+"€";
- document.getElementById('depositResult').innerHTML=
-   t[currentLang].depositLabel+" "+deposit.toFixed(2)+"€";
-}
-
-document.getElementById('nights').addEventListener('input',updatePrice);
-updatePrice();
-
-// Gallery
-const gallery=document.getElementById('gallery');
-for(let i=1;i<=19;i++){
- const img=document.createElement('img');
- img.src='img'+i+'.jpg';
- img.dataset.index=i-1;
- gallery.appendChild(img);
-}
-
-let images=document.querySelectorAll('#gallery img');
-let currentIndex=0;
-
-images.forEach(img=>{
- img.onclick=()=>{
-  currentIndex=parseInt(img.dataset.index);
-  document.getElementById('lightbox').style.display='flex';
-  document.getElementById('lightbox-img').src=img.src;
- };
-});
-
-function closeLightbox(){document.getElementById('lightbox').style.display='none';}
-function prevImage(){currentIndex=(currentIndex-1+images.length)%images.length;document.getElementById('lightbox-img').src=images[currentIndex].src;}
-function nextImage(){currentIndex=(currentIndex+1)%images.length;document.getElementById('lightbox-img').src=images[currentIndex].src;}
-
-function revealOnScroll(){
- const cards=document.querySelectorAll('.card');
- const triggerBottom=window.innerHeight*0.85;
- cards.forEach(card=>{
-   const top=card.getBoundingClientRect().top;
-   if(top<triggerBottom) card.classList.add('visible');
- });
-}
-window.addEventListener('scroll',revealOnScroll);
-window.addEventListener('load',revealOnScroll);
 </script>
 
 </body>
