@@ -242,6 +242,15 @@ button:hover{ transform:scale(1.05); }
 </div>
 
 <div class="card">
+<h2>ПЛАЩАНЕ</h2>
+<p>Изберете начин на плащане:</p>
+<button onclick="showBank()">Банкова сметка</button>
+<button onclick="showRevolut()">Revolut</button>
+
+<div id="paymentInfo" style="margin-top:15px;font-weight:600;"></div>
+</div>
+
+<div class="card">
 <h2 id="contactTitle"></h2>
 <p id="contactText"></p>
 <p>🌐 <a href="https://www.facebook.com/share/17wdG6LS9p/?mibextid=wwXIfr" target="_blank">Фейсбук страница</a></p>
@@ -374,6 +383,17 @@ function revealOnScroll(){
 }
 window.addEventListener('scroll',revealOnScroll);
 window.addEventListener('load',revealOnScroll);
+
+// Payment functions
+function showBank(){
+ document.getElementById('paymentInfo').innerHTML=
+ 'Банкова сметка: <br>IBAN: BG02UNCR70001522527069<br>Име: Антоанета Кънева';
+}
+
+function showRevolut(){
+ document.getElementById('paymentInfo').innerHTML=
+ 'Revolut: @antoan2vle';
+}
 </script>
 
 </body>
