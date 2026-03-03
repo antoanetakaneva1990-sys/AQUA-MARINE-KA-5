@@ -150,30 +150,26 @@ button.main-btn{
 
 <div class="container">
 
-<!-- ЗА АПАРТАМЕНТА -->
 <div class="card">
 <h2 id="aboutTitle"></h2>
 <p id="aboutText"></p>
 </div>
 
-<!-- НАСТАНЯВАНЕ -->
 <div class="card">
 <h2 id="stayTitle"></h2>
 <p id="stayText"></p>
 </div>
 
-<!-- ЦЕНИ -->
 <div class="card">
 <h2 id="pricesTitle"></h2>
 <p id="pricesText"></p>
 </div>
 
-<!-- РЕЗЕРВАЦИЯ -->
 <div class="card">
 <h2 id="bookingTitle"></h2>
 
 <label id="checkinLabel"></label>
-<input type="date" id="checkin" class="input-field">
+<input type="date" class="input-field">
 
 <label id="nightsLabel"></label>
 <input type="number" id="nights" min="1" value="1" class="input-field">
@@ -184,7 +180,6 @@ button.main-btn{
 <button class="main-btn" id="payBtn"></button>
 </div>
 
-<!-- ГАЛЕРИЯ -->
 <div class="card">
 <h2 id="galleryTitle"></h2>
 <div class="gallery" id="gallery"></div>
@@ -192,17 +187,15 @@ button.main-btn{
 
 <div id="lightbox">
 <img id="lightbox-img">
-<button class="main-btn" onclick="closeLightbox()">Затвори</button>
+<button class="main-btn" onclick="closeLightbox()">Close</button>
 </div>
 
-<!-- КОНТАКТИ -->
 <div class="card">
 <h2 id="contactTitle"></h2>
 <p id="contactText"></p>
 <p>🌐 <a href="https://www.facebook.com/share/17wdG6LS9p/?mibextid=wwXIfr" target="_blank">Facebook</a></p>
 </div>
 
-<!-- ЛОКАЦИЯ -->
 <div class="card">
 <h2 id="mapTitle"></h2>
 <div class="map-container">
@@ -214,17 +207,14 @@ width="100%" height="100%" style="border:0;" allowfullscreen></iframe>
 </div>
 
 <script>
+
+let currentLang="bg";
+
 const t={
 bg:{
 subtitle:"Луксозен апартамент в Неа Перамос • 2 км от яхтеното пристанище на Ираклица",
 aboutTitle:"ЗА АПАРТАМЕНТА",
-about:`Потопете се в свят на спокойствие и изискан морски комфорт.
-
-Aqua Marine KA5 е идеален за до 4 гости и предлага две отделни спални и уютна дневна с възможност за спане на диван. Във всяка стая има телевизор, а централната климатизация осигурява прохлада през летните дни.
-
-Апартаментът разполага с баня с тоалетна и допълнителна самостоятелна тоалетна. Кухнята е напълно оборудвана, включително с пералня и миялна машина. На разположение са двор от 20 м², собствено паркомясто и тераса с барбекю.
-
-Разположен на около 2 км от яхтеното пристанище на Ираклица и в близост до плажовете Амолофи и тюркоазените води на района, Aqua Marine KA5 съчетава удобство, стил и отлична локация за спокойна лятна почивка.`,
+about:"Потопете се в свят на спокойствие и изискан морски комфорт. Aqua Marine KA5 е идеален за до 4 гости с две отделни спални и възможност за спане на диван. Във всяка стая има телевизор, централна климатизация, баня с тоалетна и отделна тоалетна. Разполага с пералня, миялна, двор 20 м², собствено паркомясто и тераса с барбекю. Намира се близо до Амолофи и яхтеното пристанище на Ираклица.",
 stayTitle:"НАСТАНЯВАНЕ",
 stayText:"Настаняване: след 14:00 ч.<br>Напускане: до 10:00 ч.",
 pricesTitle:"ЦЕНИ",
@@ -232,17 +222,37 @@ prices:"Под 5 нощувки: 160€/вечер<br>5 или повече но
 bookingTitle:"РЕЗЕРВАЦИЯ",
 checkin:"Дата на настаняване:",
 nights:"Брой нощувки:",
-total:"Обща цена за престой:",
+total:"Обща цена:",
 deposit:"Депозит (20%):",
 pay:"ПЛАТИ ДЕПОЗИТ",
 galleryTitle:"ГАЛЕРИЯ",
 contactTitle:"КОНТАКТИ",
 contactText:"📧 Имейл: antoaneta_n_k@yahoo.dk<br>📞 Телефон: 00359876644933",
 mapTitle:"ЛОКАЦИЯ"
+},
+en:{
+subtitle:"Luxury apartment in Nea Peramos • 2 km from Iraklitsa Marina",
+aboutTitle:"ABOUT THE APARTMENT",
+about:"Immerse yourself in comfort and refined seaside style. Aqua Marine KA5 accommodates up to 4 guests with two separate bedrooms and sofa sleeping option. TV in every room, central air conditioning, bathroom with toilet and additional separate toilet. Includes washing machine, dishwasher, 20 m² yard, private parking and barbecue terrace. Close to Ammolofoi beach and Iraklitsa marina.",
+stayTitle:"CHECK-IN / CHECK-OUT",
+stayText:"Check-in: after 14:00<br>Check-out: until 10:00",
+pricesTitle:"PRICES",
+prices:"Less than 5 nights: 160€/night<br>5+ nights: 150€/night",
+bookingTitle:"BOOKING",
+checkin:"Check-in date:",
+nights:"Number of nights:",
+total:"Total price:",
+deposit:"Deposit (20%):",
+pay:"PAY DEPOSIT",
+galleryTitle:"GALLERY",
+contactTitle:"CONTACT",
+contactText:"📧 Email: antoaneta_n_k@yahoo.dk<br>📞 Phone: 00359876644933",
+mapTitle:"LOCATION"
 }
 };
 
 function setLang(lang){
+currentLang=lang;
 document.getElementById('subtitle').innerHTML=t[lang].subtitle;
 document.getElementById('aboutTitle').innerHTML=t[lang].aboutTitle;
 document.getElementById('aboutText').innerHTML=t[lang].about;
@@ -261,35 +271,20 @@ document.getElementById('mapTitle').innerHTML=t[lang].mapTitle;
 updatePrice();
 }
 
-setLang('bg');
-
 function updatePrice(){
 let nights=parseInt(document.getElementById('nights').value)||0;
 let pricePerNight=nights>=5?150:160;
 let total=nights*pricePerNight;
 let deposit=total*0.2;
 
-document.getElementById('totalPrice').innerHTML=t.bg.total+" "+total+"€";
-document.getElementById('depositPrice').innerHTML=t.bg.deposit+" "+deposit.toFixed(2)+"€";
+document.getElementById('totalPrice').innerHTML=t[currentLang].total+" "+total+"€";
+document.getElementById('depositPrice').innerHTML=t[currentLang].deposit+" "+deposit.toFixed(2)+"€";
 }
 
 document.getElementById('nights').addEventListener('input',updatePrice);
-updatePrice();
 
-const gallery=document.getElementById('gallery');
-for(let i=1;i<=19;i++){
-let img=document.createElement('img');
-img.src='img'+i+'.jpg';
-img.onclick=function(){
-document.getElementById('lightbox').style.display='flex';
-document.getElementById('lightbox-img').src=this.src;
-}
-gallery.appendChild(img);
-}
+setLang('bg');
 
-function closeLightbox(){
-document.getElementById('lightbox').style.display='none';
-}
 </script>
 
 </body>
