@@ -6,6 +6,7 @@
 <title>Aqua Marine KA5</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://js.stripe.com/v3/"></script>
 
 <style>
 body{
@@ -163,19 +164,6 @@ button:hover{ transform:scale(1.05); }
   overflow:hidden;
 }
 
-.copy-btn{
-  background:#0f6a6a;
-  color:white;
-  border:none;
-  padding:6px 12px;
-  border-radius:6px;
-  cursor:pointer;
-  margin-left:5px;
-  font-size:14px;
-}
-
-.copy-btn:hover{ background:#066060; }
-
 @keyframes fadeIn{ to{opacity:1;} }
 
 @media (max-width:768px){
@@ -209,19 +197,16 @@ button:hover{ transform:scale(1.05); }
 
 <div class="container">
 
-<!-- ABOUT -->
 <div class="card">
 <h2 id="aboutTitle"></h2>
 <p id="aboutText"></p>
 </div>
 
-<!-- PRICES -->
 <div class="card">
 <h2 id="pricesTitle"></h2>
 <p id="pricesText"></p>
 </div>
 
-<!-- GALLERY -->
 <div class="card">
 <h2 id="galleryTitle"></h2>
 <div class="gallery" id="gallery"></div>
@@ -236,7 +221,6 @@ button:hover{ transform:scale(1.05); }
 </div>
 </div>
 
-<!-- BOOKING -->
 <div class="card">
 <h2 id="bookingTitle"></h2>
 <label id="checkinLabel"></label>
@@ -248,32 +232,21 @@ button:hover{ transform:scale(1.05); }
 <p id="priceResult" style="font-weight:600;margin-top:10px;"></p>
 <p id="depositResult" style="font-weight:600;"></p>
 
-<h3>Плащане на депозит</h3>
-<p>Банкова сметка: <strong>BG02UNCR70001522527069 – Антоанета Кънева</strong> 
-<button class="copy-btn" onclick="copyText('BG02UNCR70001522527069 – Антоанета Кънева')">Копирай</button></p>
-
-<p>Revolut: <strong>@antoan2vle</strong> 
-<button class="copy-btn" onclick="copyText('@antoan2vle')">Копирай</button></p>
-
-<p>Основание за плащане: <span id="paymentRef"></span> 
-<button class="copy-btn" onclick="copyText(document.getElementById('paymentRef').innerText)">Копирай</button></p>
+<button id="payBtn"></button>
 </div>
 
-<!-- ACCOMMODATION -->
 <div class="card">
 <h2>НАСТАНЯВАНЕ</h2>
 <p>Настаняване: 14:00</p>
 <p>Напускане: 10:00</p>
 </div>
 
-<!-- CONTACT -->
 <div class="card">
 <h2 id="contactTitle"></h2>
 <p id="contactText"></p>
 <p>🌐 <a href="https://www.facebook.com/share/17wdG6LS9p/?mibextid=wwXIfr" target="_blank">Фейсбук страница</a></p>
 </div>
 
-<!-- MAP -->
 <div class="card">
 <h2 id="mapTitle"></h2>
 <div class="map-container">
@@ -362,14 +335,9 @@ function updatePrice(){
    t[currentLang].priceLabel+" "+total+"€";
  document.getElementById('depositResult').innerHTML=
    t[currentLang].depositLabel+" "+deposit.toFixed(2)+"€";
-
- // Генерираме основание за плащане
- const checkin=document.getElementById('checkin').value || 'дата';
- document.getElementById('paymentRef').innerText=`Депозит ${checkin} – ${nights} нощувки – Aqua Marine KA5`;
 }
 
 document.getElementById('nights').addEventListener('input',updatePrice);
-document.getElementById('checkin').addEventListener('input',updatePrice);
 updatePrice();
 
 // Gallery
@@ -406,11 +374,6 @@ function revealOnScroll(){
 }
 window.addEventListener('scroll',revealOnScroll);
 window.addEventListener('load',revealOnScroll);
-
-// Копиране на текст
-function copyText(text){
- navigator.clipboard.writeText(text).then(()=>alert('Копирано!'));
-}
 </script>
 
 </body>
