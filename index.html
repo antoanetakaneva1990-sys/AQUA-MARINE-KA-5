@@ -235,18 +235,19 @@ button:hover{ transform:scale(1.05); }
 <button id="payBtn"></button>
 </div>
 
+<!-- НАСТАНЯВАНЕ -->
 <div class="card">
-<h2>НАСТАНЯВАНЕ</h2>
-<p>Настаняване: 14:00</p>
-<p>Напускане: 10:00</p>
+<h2 id="accommodationTitle"></h2>
+<p id="checkinTime"></p>
+<p id="checkoutTime"></p>
 </div>
 
+<!-- ПЛАЩАНЕ -->
 <div class="card">
-<h2>ПЛАЩАНЕ</h2>
-<p>Изберете начин на плащане:</p>
-<button onclick="showBank()">Банкова сметка</button>
-<button onclick="showRevolut()">Revolut</button>
-
+<h2 id="paymentTitle"></h2>
+<p id="paymentText"></p>
+<button onclick="showBank()" id="bankBtn"></button>
+<button onclick="showRevolut()" id="revolutBtn"></button>
 <div id="paymentInfo" style="margin-top:15px;font-weight:600;"></div>
 </div>
 
@@ -287,7 +288,14 @@ payBtn:"ПЛАТИ ДЕПОЗИТ",
 galleryTitle:"ГАЛЕРИЯ",
 contactTitle:"КОНТАКТИ",
 contactText:`📧 Имейл: antoaneta_n_k@yahoo.dk<br>📞 Телефон: 00359876644933`,
-mapTitle:"ЛОКАЦИЯ"
+mapTitle:"ЛОКАЦИЯ",
+accommodationTitle:"НАСТАНЯВАНЕ",
+checkinTime:"Настаняване: 14:00",
+checkoutTime:"Напускане: 10:00",
+paymentTitle:"ПЛАЩАНЕ",
+paymentText:"Изберете начин на плащане:",
+bankBtn:"Банкова сметка",
+revolutBtn:"Revolut"
 },
 en:{
 subtitle:"Luxury apartment in Nea Peramos • 2 km from Iraklitsa Marina",
@@ -308,7 +316,14 @@ payBtn:"PAY DEPOSIT",
 galleryTitle:"GALLERY",
 contactTitle:"CONTACTS",
 contactText:`📧 Email: antoaneta_n_k@yahoo.dk<br>📞 Phone: 00359876644933`,
-mapTitle:"LOCATION"
+mapTitle:"LOCATION",
+accommodationTitle:"ACCOMMODATION",
+checkinTime:"Check-in: 14:00",
+checkoutTime:"Check-out: 10:00",
+paymentTitle:"PAYMENT",
+paymentText:"Choose payment method:",
+bankBtn:"Bank Account",
+revolutBtn:"Revolut"
 }
 };
 
@@ -329,6 +344,16 @@ function setLang(lang){
  document.getElementById('contactTitle').innerHTML=t[lang].contactTitle;
  document.getElementById('contactText').innerHTML=t[lang].contactText;
  document.getElementById('mapTitle').innerHTML=t[lang].mapTitle;
+
+ // Нови секции
+ document.getElementById('accommodationTitle').innerHTML = t[lang].accommodationTitle;
+ document.getElementById('checkinTime').innerHTML = t[lang].checkinTime;
+ document.getElementById('checkoutTime').innerHTML = t[lang].checkoutTime;
+ document.getElementById('paymentTitle').innerHTML = t[lang].paymentTitle;
+ document.getElementById('paymentText').innerHTML = t[lang].paymentText;
+ document.getElementById('bankBtn').innerHTML = t[lang].bankBtn;
+ document.getElementById('revolutBtn').innerHTML = t[lang].revolutBtn;
+
  updatePrice();
 }
 
