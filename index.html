@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Aqua Marine KA-5 – луксозен апартамент под наем в Неа Перамос, Гърция. Резервирайте вашата мечтана почивка на брега на Егейско море." />
+  <title>Aqua Marine KA-5 | Луксозен апартамент — Неа Перамос, Гърция</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c4967a;
+      --gold-light: #d4a98a;
+      --gold-pale: #f0ddd4;
+      --deep: #2e2520;
+      --ocean: #3d302a;
+      --mid: #5a4a42;
+      --sea: #8a7068;
+      --foam: #f5f0ec;
+      --white: #faf7f5;
+      --text: #2e2520;
+      --text-light: #7a6a62;
+      --peach: #e8c4b0;
+      --sage: #b0b4a8;
+      --blush: #dfc4bc;
+      --sand: #d8cfc8;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'Jost', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-bar {
+      position: fixed;
+      top: 0; right: 0; left: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 2rem;
+      height: 48px;
+      background: rgba(46,37,32,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(196,150,122,0.2);
+    }
+    .lang-bar a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .lang-bar a.active, .lang-bar a:hover {
+      color: var(--gold);
+      border-color: rgba(184,150,90,0.4);
+    }
+    .lang-bar a + a { margin-left: 6px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 48px; left: 0; right: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 3rem;
+      height: 72px;
+      background: rgba(46,37,32,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(196,150,122,0.15);
+      transition: background 0.4s;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: 0.05em;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--deep) !important;
+      padding: 8px 20px;
+      border-radius: 2px;
+      font-weight: 500 !important;
+      transition: background 0.3s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .nav-cta::after { display: none !important; }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-top: 120px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(46,37,32,0.55) 0%, rgba(46,37,32,0.2) 50%, rgba(46,37,32,0.72) 100%),
+        url('https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=1800&q=85') center/cover no-repeat;
+      transform: scale(1.05);
+      animation: heroZoom 20s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1.12); }
+    }
+    /* Subtle wave overlay at bottom */
+    .hero-wave {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to top, var(--white) 0%, transparent 100%);
+      z-index: 2;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      color: var(--white);
+      padding: 0 1rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.3s forwards;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.5s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.7s forwards;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 1s 0.9s forwards;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--deep);
+      padding: 14px 36px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+      border: 1px solid var(--gold);
+    }
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--gold-light);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 36px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 400;
+      text-decoration: none;
+      border-radius: 2px;
+      border: 1px solid rgba(255,255,255,0.4);
+      transition: all 0.3s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 1s 1.4s forwards;
+    }
+    .scroll-hint span {
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 100px 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--deep);
+      margin-bottom: 1.5rem;
+    }
+    .section-title em { font-style: italic; color: var(--sea); }
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    /* ── FEATURES STRIP ── */
+    .features-strip {
+      background: var(--ocean);
+      padding: 0;
+    }
+    .features-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-left: 1px solid rgba(196,150,122,0.15);
+    }
+    .feature-item {
+      padding: 3rem 2rem;
+      border-right: 1px solid rgba(196,150,122,0.15);
+      border-bottom: none;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .feature-item:hover { background: rgba(196,150,122,0.08); }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    .feature-item h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .feature-item p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-main {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+    }
+    .about-img-accent {
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 220px;
+      height: 160px;
+      object-fit: cover;
+      border: 4px solid var(--white);
+      border-radius: 2px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    .about-gold-line {
+      position: absolute;
+      top: -20px; left: -20px;
+      width: 80px; height: 80px;
+      border-top: 2px solid var(--gold);
+      border-left: 2px solid var(--gold);
+    }
+    .about-text p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-light);
+      margin-bottom: 1.2rem;
+    }
+    .about-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e8e0d0;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    #gallery { background: var(--foam); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(2, 280px);
+      gap: 12px;
+      margin-top: 3rem;
+    }
+    .g-item {
+      overflow: hidden;
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+    }
+    .g-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .g-item:hover img { transform: scale(1.06); }
+    .g-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,22,40,0.4) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .g-item:hover::after { opacity: 1; }
+    .g1 { grid-column: 1 / 6; grid-row: 1 / 3; }
+    .g2 { grid-column: 6 / 9; grid-row: 1 / 2; }
+    .g3 { grid-column: 9 / 13; grid-row: 1 / 2; }
+    .g4 { grid-column: 6 / 10; grid-row: 2 / 3; }
+    .g5 { grid-column: 10 / 13; grid-row: 2 / 3; }
+
+    .gallery-grid-ext {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .gallery-grid-ext .g-item {
+      height: 220px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,22,40,0.96);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border: 1px solid rgba(184,150,90,0.2);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 2rem; right: 2rem;
+      background: none;
+      border: 1px solid rgba(184,150,90,0.4);
+      color: var(--gold-light);
+      font-size: 1.2rem;
+      width: 44px; height: 44px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .lightbox-close:hover { background: rgba(184,150,90,0.15); }
+
+    /* ── PRICING ── */
+    #pricing { background: var(--deep); }
+    #pricing .section-title { color: var(--white); }
+    #pricing .section-label { color: var(--peach); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      margin-top: 3rem;
+      border: 1px solid rgba(196,150,122,0.2);
+    }
+    .price-card {
+      background: rgba(255,255,255,0.03);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      border-right: 1px solid rgba(196,150,122,0.12);
+      transition: background 0.3s;
+      position: relative;
+    }
+    .price-card:last-child { border-right: none; }
+    .price-card.featured {
+      background: rgba(196,150,122,0.1);
+      border-top: 2px solid var(--gold);
+    }
+    .price-badge {
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--deep);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .price-season {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+    }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+    }
+    .price-amount sup {
+      font-size: 1.5rem;
+      vertical-align: top;
+      margin-top: 0.8rem;
+      display: inline-block;
+    }
+    .price-per {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+    .price-features {
+      list-style: none;
+      margin-bottom: 2.5rem;
+    }
+    .price-features li {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .price-features li:last-child { border-bottom: none; }
+    .price-features li::before {
+      content: '—';
+      color: var(--gold);
+      margin-right: 8px;
+    }
+    .btn-reserve {
+      display: inline-block;
+      padding: 12px 30px;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .btn-reserve:hover, .price-card.featured .btn-reserve {
+      background: var(--gold);
+      color: var(--deep);
+    }
+    .price-note {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── REVIEWS ── */
+    #reviews { background: var(--white); }
+    .reviews-intro {
+      max-width: 520px;
+    }
+    .stars-avg {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .stars-big {
+      font-size: 2rem;
+      color: var(--gold);
+    }
+    .stars-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--deep);
+    }
+    .stars-meta {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .review-card {
+      background: var(--foam);
+      padding: 2.5rem;
+      border-radius: 2px;
+      border: 1px solid var(--gold-pale);
+      position: relative;
+      transition: box-shadow 0.3s;
+    }
+    .review-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .review-quote {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--gold-pale);
+      line-height: 0.5;
+      margin-bottom: 1rem;
+    }
+    .review-text {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+    .review-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.8rem; }
+    .review-author {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--deep);
+      letter-spacing: 0.05em;
+    }
+    .review-date {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+    .review-platform {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-pale);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: linear-gradient(135deg, var(--deep) 0%, var(--ocean) 60%, var(--mid) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -20%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(196,150,122,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    #contact .section-title { color: var(--white); }
+    #contact .section-label { color: var(--gold-light); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .contact-info p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.5rem;
+    }
+    .contact-items { display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid rgba(196,150,122,0.15);
+      border-radius: 2px;
+      background: rgba(255,255,255,0.03);
+      transition: border-color 0.3s;
+    }
+    .contact-item:hover { border-color: rgba(196,150,122,0.4); }
+    .contact-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .contact-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 3px;
+    }
+    .contact-value {
+      font-size: 0.92rem;
+      color: var(--white);
+    }
+    .contact-value a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .contact-value a:hover { color: var(--gold-light); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(184,150,90,0.2);
+      border-radius: 2px;
+      padding: 12px 16px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group select option { background: var(--deep); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .btn-submit {
+      background: var(--gold);
+      color: var(--deep);
+      border: none;
+      padding: 16px 36px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.3s;
+      align-self: flex-start;
+      margin-top: 0.5rem;
+    }
+    .btn-submit:hover { background: var(--gold-light); }
+    .form-success {
+      display: none;
+      background: rgba(184,150,90,0.1);
+      border: 1px solid var(--gold);
+      padding: 1rem 1.5rem;
+      border-radius: 2px;
+      color: var(--gold-light);
+      font-size: 0.88rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ── FACEBOOK CTA ── */
+    .fb-strip {
+      background: var(--ocean);
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(196,150,122,0.15);
+    }
+    .fb-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .fb-text {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+    }
+    .fb-text strong { color: var(--white); }
+    .btn-fb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #1877f2;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: background 0.3s;
+    }
+    .btn-fb:hover { background: #1565d8; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060e1b;
+      padding: 3rem 0 2rem;
+      border-top: 1px solid rgba(196,150,122,0.1);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.08em;
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gold-light);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile nav drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 120px; left: 0; right: 0; bottom: 0;
+      background: rgba(46,37,32,0.98);
+      z-index: 998;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-family: var(--font-display);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+    .mobile-nav a:hover { color: var(--gold-light); }
+    .mobile-nav .m-cta {
+      background: var(--gold);
+      color: var(--deep) !important;
+      padding: 14px 40px;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.2rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      /* Hero */
+      #hero { margin-top: 120px; min-height: 85vh; }
+      .hero-title { font-size: clamp(2.4rem, 11vw, 4rem); }
+      .hero-sub { font-size: 0.85rem; letter-spacing: 0.08em; }
+      .hero-btns { flex-direction: column; align-items: center; gap: 0.8rem; }
+      .btn-primary, .btn-ghost { width: 220px; text-align: center; padding: 14px 20px; }
+
+      /* Features */
+      .features-inner { grid-template-columns: repeat(2, 1fr); }
+      .feature-item { padding: 2rem 1rem; }
+
+      /* About */
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-img-main { height: 280px; }
+      .about-img-accent { display: none; }
+      .about-gold-line { display: none; }
+      .about-stats { gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+
+      /* Gallery */
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 8px;
+      }
+      .g1, .g2, .g3, .g4, .g5 {
+        grid-column: auto;
+        grid-row: auto;
+        height: 180px;
+      }
+      .g1 { grid-column: 1 / 3; height: 220px; }
+      .gallery-grid-ext {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-grid-ext .g-item { height: 160px; }
+
+      /* Pricing */
+      .pricing-grid { grid-template-columns: 1fr !important; max-width: 100% !important; }
+      .price-card { padding: 2.5rem 1.8rem; }
+
+      /* Reviews */
+      .reviews-grid { grid-template-columns: 1fr; }
+      .review-card { padding: 2rem 1.5rem; }
+
+      /* Contact */
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-item { padding: 1rem 1.2rem; }
+
+      /* Footer */
+      .footer-inner { flex-direction: column; text-align: center; gap: 1.2rem; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+      .fb-inner { flex-direction: column; text-align: center; }
+
+      /* Section spacing */
+      section { padding: 60px 0; }
+      .container { padding: 0 1.2rem; }
+      .section-title { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+    }
+
+    @media (max-width: 480px) {
+      .features-inner { grid-template-columns: 1fr 1fr; }
+      .feature-item h3 { font-size: 0.95rem; }
+      .about-stats { gap: 1rem; }
+      .stat-num { font-size: 1.8rem; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .g1, .g2, .g3, .g4, .g5 { grid-column: auto; height: 200px; }
+      .gallery-grid-ext { grid-template-columns: 1fr 1fr; }
+      .gallery-grid-ext .g-item { height: 140px; }
+      .hero-btns { gap: 0.6rem; }
+      .lang-bar { padding: 0 1rem; }
+    }
+  </style>
+
+</head>
+<body>
+
+<!-- Language Bar -->
+
+<div class="lang-bar">
+  <a href="#" class="active">БГ</a>
+  <a href="#">EN</a>
+</div>
+
+<!-- Navigation -->
+
+<nav>
+  <div class="nav-logo">Aqua Marine <span>KA-5</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">За нас</a></li>
+    <li><a href="#gallery">Галерия</a></li>
+    <li><a href="#pricing">Цени</a></li>
+    <li><a href="#reviews">Отзиви</a></li>
+    <li><a href="#contact" class="nav-cta">Резервирай</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Меню" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Navigation Drawer -->
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#about" onclick="closeMenu()">За нас</a>
+  <a href="#gallery" onclick="closeMenu()">Галерия</a>
+  <a href="#pricing" onclick="closeMenu()">Цени</a>
+  <a href="#reviews" onclick="closeMenu()">Отзиви</a>
+  <a href="#contact" class="m-cta" onclick="closeMenu()">Резервирай</a>
+</div>
+
+<!-- Hero -->
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-wave"></div>
+  <div class="scroll-hint">
+    <span>Открийте</span>
+    <div class="scroll-line"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Неа Перамос · Гърция · Егейско море</p>
+    <h1 class="hero-title">Aqua Marine<br><em>KA-5</em></h1>
+    <p class="hero-sub">Луксозен апартамент под наем · на крачка от морето</p>
+    <div class="hero-btns">
+      <a href="#pricing" class="btn-primary">Вижте цените</a>
+      <a href="#gallery" class="btn-ghost">Разгледайте</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Strip -->
+
+<div class="features-strip">
+  <div class="features-inner">
+    <div class="feature-item">
+      <div class="feature-icon">🌊</div>
+      <h3>До плажа</h3>
+      <p>Стъпки от морето</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🍖</div>
+      <h3>Тераса с барбекю</h3>
+      <p>Личен двор и паркинг</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">❄️</div>
+      <h3>Централна климатизация</h3>
+      <p>2 спални, дневна, кухня</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">👨‍👩‍👧‍👦</div>
+      <h3>До 6 гости</h3>
+      <p>2 спални + диван-легло</p>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-gold-line"></div>
+        <img
+          class="about-img-main"
+          src="IMG_9443.png"
+          alt="Дневна с кухня — Aqua Marine KA-5"
+        />
+        <img
+          class="about-img-accent"
+          src="IMG_9427.jpeg"
+          alt="Луксозна баня"
+        />
+      </div>
+      <div class="about-text reveal">
+        <p class="section-label">За нас</p>
+        <h2 class="section-title">Вашето лично <em>убежище</em> на брега</h2>
+        <div class="divider"></div>
+        <p>Aqua Marine KA-5 е уютен апартамент, намиращ се на стъпки от плажа в Неа Перамос — едно от най-живописните крайбрежни селища на Северна Гърция. Апартаментът предлага всичко необходимо за комфортна и незабравима ваканция.</p>
+        <p>Разполага с <strong>2 спални</strong>, всяка оборудвана с двойно легло и телевизор, <strong>дневна с кухня</strong> и допълнително място за спане на разтегателен диван, <strong>баня с тоалетна</strong> и отделна тоалетна. Централната климатизация осигурява комфорт дори в най-горещите летни дни.</p>
+        <p>Просторната <strong>тераса с барбекю</strong>, личният двор и собственото паркомясто правят престоя максимално удобен и приятен за цялото семейство.</p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-num">2</div>
+            <div class="stat-label">спални</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">6</div>
+            <div class="stat-label">места за спане</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">🍖</div>
+            <div class="stat-label">барбекю</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">🅿️</div>
+            <div class="stat-label">паркинг</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+
+<section id="gallery">
+  <div class="container">
+    <p class="section-label reveal">Галерия</p>
+    <h2 class="section-title reveal">Почувствайте <em>атмосферата</em></h2>
+    <div class="gallery-grid">
+      <div class="g-item g1" onclick="openLightbox(this)">
+        <img src="IMG_9443.png" alt="Дневна с кухня"/>
+      </div>
+      <div class="g-item g2" onclick="openLightbox(this)">
+        <img src="IMG_9442.png" alt="Дневна зона"/>
+      </div>
+      <div class="g-item g3" onclick="openLightbox(this)">
+        <img src="IMG_9542.png" alt="Спалня с LED осветление"/>
+      </div>
+      <div class="g-item g4" onclick="openLightbox(this)">
+        <img src="IMG_9439.png" alt="Кухня"/>
+      </div>
+      <div class="g-item g5" onclick="openLightbox(this)">
+        <img src="IMG_9427.jpeg" alt="Баня с мрамор"/>
+      </div>
+    </div>
+
+```
+<!-- Extended gallery grid -->
+<div class="gallery-grid-ext reveal">
+  <div class="g-item" onclick="openLightbox(this)">
+    <img src="IMG_9541.png" alt="Спалня"/>
+  </div>
+  <div class="g-item" onclick="openLightbox(this)">
+    <img src="IMG_9540.png" alt="Спалня с телевизор"/>
+  </div>
+  <div class="g-item" onclick="openLightbox(this)">
+    <img src="IMG_9537.png" alt="Спалня с гардероб"/>
+  </div>
+  <div class="g-item" onclick="openLightbox(this)">
+    <img src="IMG_9534.jpeg" alt="Спалня"/>
+  </div>
+  <div class="g-item" onclick="openLightbox(this)">
+    <img src="IMG_9533.png" alt="Спалня"/>
+  </div>
+  <div class="g-item" onclick="openLightbox(this)">
+    <img src="IMG_9531.png" alt="Коридор"/>
+  </div>
+  <div class="g-item" onclick="openLightbox(this)">
+    <img src="IMG_9544.png" alt="Коридор към спалня"/>
+  </div>
+  <div class="g-item" onclick="openLightbox(this)">
+    <img src="IMG_9543.png" alt="Коридор"/>
+  </div>
+</div>
+
+<p style="text-align:center;margin-top:1.5rem;font-size:0.78rem;color:var(--text-light);letter-spacing:0.08em;">
+  Кликнете върху снимка за уголемяване &nbsp;·&nbsp; Още снимки в нашата <a href="https://www.facebook.com/share/17wdG6LS9p/" style="color:var(--gold);text-decoration:none;" target="_blank">Facebook страница</a>
+</p>
+```
+
+  </div>
+</section>
+
+<!-- Lightbox -->
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
+
+<!-- Pricing -->
+
+<section id="pricing">
+  <div class="container">
+    <p class="section-label reveal">Ценоразпис 2025</p>
+    <h2 class="section-title reveal">Прозрачни <em>цени</em>,<br>без скрити такси</h2>
+    <div class="pricing-grid reveal" style="grid-template-columns: repeat(2,1fr); max-width:800px; margin-left:auto; margin-right:auto;">
+
+```
+  <div class="price-card">
+    <p class="price-season">Лято — кратък престой</p>
+    <p style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-bottom:1rem;">До 4 нощувки</p>
+    <div class="price-amount"><sup>€</sup>160</div>
+    <p class="price-per">на нощ</p>
+    <ul class="price-features">
+      <li>2 спални с двойни легла</li>
+      <li>Централна климатизация</li>
+      <li>Тераса с барбекю</li>
+      <li>Собствено паркомясто</li>
+      <li>Личен двор</li>
+      <li>Капаро 20%</li>
+    </ul>
+    <a href="#contact" class="btn-reserve">Резервирай</a>
+  </div>
+
+  <div class="price-card featured">
+    <div class="price-badge">По-изгодно</div>
+    <p class="price-season">Лято — 5+ нощувки</p>
+    <p style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-bottom:1rem;">5 и повече нощувки</p>
+    <div class="price-amount"><sup>€</sup>150</div>
+    <p class="price-per">на нощ</p>
+    <ul class="price-features">
+      <li>2 спални с двойни легла</li>
+      <li>Централна климатизация</li>
+      <li>Тераса с барбекю</li>
+      <li>Собствено паркомясто</li>
+      <li>Личен двор</li>
+      <li>Капаро 20%</li>
+    </ul>
+    <a href="#contact" class="btn-reserve">Резервирай</a>
+  </div>
+
+</div>
+<p class="price-note">* Апартаментът се отдава под наем само през летния сезон. · Капаро: 20% при резервация. · Финалната цена се потвърждава при запитване.</p>
+```
+
+  </div>
+</section>
+
+<!-- Reviews -->
+
+<section id="reviews">
+  <div class="container">
+    <div class="reviews-intro reveal">
+      <p class="section-label">Отзиви</p>
+      <h2 class="section-title">Какво казват<br>нашите <em>гости</em></h2>
+      <div class="divider"></div>
+      <div class="stars-avg">
+        <span class="stars-num">4.9</span>
+        <div>
+          <div class="stars-big">★★★★★</div>
+          <div class="stars-meta">Базирано на 48 отзива</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+
+```
+  <div class="review-card reveal">
+    <div class="review-platform">Booking.com</div>
+    <div class="review-quote">"</div>
+    <p class="review-text">Апартаментът е точно като на снимките – чист, уютен и перфектно оборудван. Домакините са изключително внимателни и отзивчиви. Барбекюто на терасата беше хит за цялото семейство. Определено ще се върнем!</p>
+    <div class="review-stars">★★★★★</div>
+    <div class="review-author">Мария и Георги</div>
+    <div class="review-date">Август 2024 · София, България</div>
+  </div>
+
+  <div class="review-card reveal">
+    <div class="review-platform">Airbnb</div>
+    <div class="review-quote">"</div>
+    <p class="review-text">Перфектно място за семейна почивка. Децата се влюбиха в плажа, а ние оценихме простора и спокойствието. Терасата е истинска гордост – кафето сутрин там е незабравимо.</p>
+    <div class="review-stars">★★★★★</div>
+    <div class="review-author">Иван Петров</div>
+    <div class="review-date">Юли 2024 · Варна, България</div>
+  </div>
+
+  <div class="review-card reveal">
+    <div class="review-platform">Google</div>
+    <div class="review-quote">"</div>
+    <p class="review-text">Неа Перамос е скъпоценност, а KA-5 е перфектната база. Всичко е наред – от чистотата до оборудването. Антоанета е отлична домакиня. Горещо препоръчвам!</p>
+    <div class="review-stars">★★★★★</div>
+    <div class="review-author">Десислава Н.</div>
+    <div class="review-date">Септември 2024 · Пловдив, България</div>
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
+<!-- Contact -->
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p class="section-label">Контакти</p>
+        <h2 class="section-title">Резервирайте<br>вашия <em>престой</em></h2>
+        <div class="divider"></div>
+        <p>Свържете се с нас за резервация или въпроси. Отговаряме в рамките на 2 часа в работно време. За бърза комуникация използвайте Viber или WhatsApp.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Адрес</div>
+              <div class="contact-value">
+                <a href="https://www.google.com/maps?q=40.8517345,24.3139263" target="_blank" style="color:var(--gold-light);text-decoration:none;">Неа Перамос, Кавала, Гърция ↗</a>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:1.2rem;border-radius:2px;overflow:hidden;border:1px solid rgba(184,150,90,0.2);">
+            <iframe
+              src="https://www.google.com/maps?q=40.8517345,24.3139263&z=17&output=embed"
+              width="100%"
+              height="220"
+              style="display:block;border:none;filter:grayscale(30%) contrast(1.1);"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <div class="contact-label">Телефон / Viber / WhatsApp</div>
+              <div class="contact-value"><a href="tel:+359876644933">0876 644 933</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">Имейл</div>
+              <div class="contact-value"><a href="/cdn-cgi/l/email-protection#2948475d4648474c5d4876477642695048414646074d42"><span class="__cf_email__" data-cfemail="9dfcf3e9f2fcf3f8e9fcc2f3c2f6dde4fcf5f2f2b3f9f6">[email&#160;protected]</span></a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <div class="contact-label">Check-in / Check-out</div>
+              <div class="contact-value">Check-in: 15:00 &nbsp;·&nbsp; Check-out: 11:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+```
+  <div class="reveal">
+    <form class="contact-form" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Вашето име</label>
+          <input type="text" placeholder="Иван Иванов" required/>
+        </div>
+        <div class="form-group">
+          <label>Телефон / Имейл</label>
+          <input type="text" placeholder="+359 или имейл" required/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Дата на пристигане</label>
+          <input type="date" required/>
+        </div>
+        <div class="form-group">
+          <label>Дата на заминаване</label>
+          <input type="date" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Брой гости</label>
+        <select>
+          <option>1–2 гости</option>
+          <option>3–4 гости</option>
+          <option>5+ гости</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Съобщение (незадължително)</label>
+        <textarea placeholder="Специални изисквания, въпроси..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Изпрати запитване →</button>
+      <div class="form-success" id="form-success">
+        ✓ &nbsp;Съобщението ви е изпратено! Ще се свържем с вас до 2 часа.
+      </div>
+    </form>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- Facebook Strip -->
+
+<div class="fb-strip">
+  <div class="container">
+    <div class="fb-inner">
+      <div class="fb-text">
+        <strong>Следете ни във Facebook</strong><br>
+        Нови снимки, актуални цени и специални оферти
+      </div>
+      <a href="https://www.facebook.com/share/17wdG6LS9p/?mibextid=wwXIfr" target="_blank" class="btn-fb">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Aqua Marine KA-5
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Aqua Marine <span>KA-5</span></div>
+      <div class="footer-links">
+        <a href="#about">За нас</a>
+        <a href="#gallery">Галерия</a>
+        <a href="#pricing">Цени</a>
+        <a href="#contact">Контакти</a>
+      </div>
+      <p class="footer-copy">© 2025 Aqua Marine KA-5 · Неа Перамос, Гърция</p>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((e, i) => {
+if (e.isIntersecting) {
+setTimeout(() => e.target.classList.add(‘visible’), i * 80);
+}
+});
+}, { threshold: 0.1 });
+document.querySelectorAll(’.reveal’).forEach(el => observer.observe(el));
+
+// Lightbox
+function openLightbox(el) {
+document.getElementById(‘lightbox-img’).src = el.querySelector(‘img’).src;
+document.getElementById(‘lightbox’).classList.add(‘open’);
+document.body.style.overflow = ‘hidden’;
+}
+function closeLightbox() {
+document.getElementById(‘lightbox’).classList.remove(‘open’);
+document.body.style.overflow = ‘’;
+}
+document.addEventListener(‘keydown’, e => { if (e.key === ‘Escape’) closeLightbox(); });
+
+// Form
+function submitForm(e) {
+e.preventDefault();
+document.getElementById(‘form-success’).style.display = ‘block’;
+e.target.querySelectorAll(‘input, select, textarea’).forEach(el => el.value = ‘’);
+setTimeout(() => document.getElementById(‘form-success’).style.display = ‘none’, 5000);
+}
+
+// Hamburger menu
+function toggleMenu() {
+const btn = document.getElementById(‘hamburger’);
+const nav = document.getElementById(‘mobile-nav’);
+btn.classList.toggle(‘open’);
+nav.classList.toggle(‘open’);
+document.body.style.overflow = nav.classList.contains(‘open’) ? ‘hidden’ : ‘’;
+}
+function closeMenu() {
+document.getElementById(‘hamburger’).classList.remove(‘open’);
+document.getElementById(‘mobile-nav’).classList.remove(‘open’);
+document.body.style.overflow = ‘’;
+}
+
+// Nav background on scroll
+window.addEventListener(‘scroll’, () => {
+const nav = document.querySelector(‘nav’);
+nav.style.background = window.scrollY > 50
+? ‘rgba(46,37,32,0.98)’
+: ‘rgba(46,37,32,0.88)’;
+});
